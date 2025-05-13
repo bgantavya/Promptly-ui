@@ -6,7 +6,7 @@
     font-family:cursive;
 }
 .icon{
-    width:150px;
+    width:15%;
     /* padding-bottom: 20px; */
     display:inline;
     border-radius: 40%;
@@ -47,7 +47,7 @@
     /* padding-right: 10%; */
     /* width:100%; */
     /* padding: 0px; */
-    top:+300vh;
+    top:+50%;
 }
 .bg{
     /* background-image:image('./assets/bg.png'); */
@@ -65,8 +65,8 @@
     /* display: block; */
     color: #fdfdfd;
     z-index: 100;
-    top: -110vh;
-    font-size: 80;
+    top: -80vh;
+    font-size:100;
     font-weight: 800;
 }
 .pro{

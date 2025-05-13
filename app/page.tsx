@@ -5,9 +5,9 @@ import TestSection from "./components/TestSection/page";
 export default function Home() {
   return (
     <div className="items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
-  <TestSection/>
+  {/* <TestSection/> */}
       <ConsolidateSection  />
-  <TestSection/>
+  {/* <TestSection/> */}
 
     </div>
   );

@@ -28,10 +28,10 @@ export default function ConsolidateSection() {
     ScrollTrigger.create({
       trigger: ".icon",
       pin: true,
-      start: "top top+=200",
-      end: "bottom+=300 top-=100",
+      start: "top top",
+      end: "bottom+=200 top-=100",
       // pinSpacing:false,
-      markers:false,
+      // markers:true,
     })
     ScrollTrigger.create({
       trigger: ".panel1",
@@ -68,7 +68,7 @@ export default function ConsolidateSection() {
       alternate:true,
       delay: stagger(100),
       autoplay:onScroll({
-        debug:false,
+        debug:true,
         enter: 'top top',
         leave: 'top-=400 bottom',
         sync: .5,
@@ -96,7 +96,7 @@ export default function ConsolidateSection() {
       delay:stagger(1000),
       ease:'linear',
       autoplay: onScroll({
-        debug:false,
+        debug:true,
         sync:true,
         enter:'top bottom',
         leave:'bottom bottm',
@@ -338,6 +338,77 @@ export default function ConsolidateSection() {
                     </ol>
                     </div>
                   </div>
+                  <div className={`${styles.div} ${styles.set} icon`}>
+          <div>
+            <Image
+              src={asana}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={gpt}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}
+            />
+          </div>
+          <div>
+          <Image
+            src={jira}
+            alt="Responsive Image"
+            className={`${styles.icon} img ${styles.right} right`}     
+          />
+          <Image
+            src={kissflow}
+            alt="Responsive Image"
+            className={`${styles.icon} img ${styles.right} right`}
+          />
+          <Image
+            src={monday}
+            alt="Responsive Image"
+            className={`${styles.icon} img left`}
+          />
+          <Image
+            src={slack}
+            alt="Responsive Image"
+            className={`${styles.icon} img left`}
+          />
+          </div>
+          <div>
+            <Image
+              src={teams}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}            
+            />
+            <Image
+              src={looker}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}  
+          />
+            <Image
+              src={miro}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}
+            />
+            <Image
+              src={notion}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={sales}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={tableau}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+          
+                
+            
+            </div>
+            </div>
                   <div>
                   <div className={`panel2 justify-items-center`}  style={{width:'100%'}}> 
                         {/* <div className={`{  ${styles.bg}}`} style={{width:'100%'}}> */}
