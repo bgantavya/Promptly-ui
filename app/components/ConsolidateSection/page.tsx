@@ -50,7 +50,7 @@ export default function ConsolidateSection() {
         debug:false,
       enter: 'top top',
       leave: 'top-=400 bottom',
-      sync: .10,
+      sync: .5,
     }) 
   });
 
@@ -66,7 +66,7 @@ export default function ConsolidateSection() {
       debug:false,
       enter: 'top-=80 top',
       leave: 'top-=500 bottom',
-      sync: .10,
+      sync: .5,
     })
   })
 

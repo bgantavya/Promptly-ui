@@ -6,7 +6,7 @@
     font-family:cursive;
 }
 .icon{
-    width:140px;
+    width:120px;
     padding-bottom: 20px;
     display:inline;
     border-radius: 40%;
@@ -31,8 +31,14 @@
     position: relative;
     font-size: large;
 }
+.list{
+    padding-top: 10%;
+}
 .set{
     z-index: 100;
+    padding-left: 5%;
+    padding-right: 5%;
     /* width:100%; */
-    top: -200;
+    /* padding: 0px; */
+    top: -300;
 }
