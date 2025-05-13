@@ -16,19 +16,40 @@ import monday from './assets/monday.png'
 import notion from './assets/notion.png'
 import sales from './assets/sales.png'
 import slack from './assets/slack.png'
+import bg from './assets/bg.png'
 import tableau from './assets/tableau.png'
 import teams from './assets/teams.png'
+import TestSection from '../TestSection/page';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ConsolidateSection() {
   useEffect(() => {
 
     ScrollTrigger.create({
-      trigger: ".pin",
+      trigger: ".icon",
       pin: true,
-      start: "top+=300 center",
-      end: "+=1000",
+      start: "top top+=200",
+      end: "bottom+=300 top-=100",
+      // pinSpacing:false,
       markers:false,
+    })
+    ScrollTrigger.create({
+      trigger: ".panel1",
+      pin: true,
+      start: "top+=50 top+=100",
+      end:"+=1000",
+      // end: "+=1500",
+      // pinSpacing:false,
+      // markers:true,
+    })
+    ScrollTrigger.create({
+      trigger: ".panel2",
+      pin: true,
+      start: "top+=50 top+=100",
+      end:"+=1500",
+      // end: "+=1500",
+      // pinSpacing:false,
+      // markers:true,
     })
 
     const scrollObserver = onScroll({
@@ -39,26 +60,27 @@ export default function ConsolidateSection() {
   })
 
     animate('.left', {
-      x: stagger(['80rem','20rem']),
-      y: stagger(['-20rem','-60rem']),
-      opacity:.0,
-      rotate: stagger(['.125turn','2turn']),
+      x: stagger(['20rem','-20rem']),
+      y: stagger(['+20rem','-30rem']),
+      // opacity:.0,
+      rotate: stagger(['.125turn','1turn']),
       ease: 'linear',
       alternate:true,
       delay: stagger(100),
       autoplay:onScroll({
         debug:false,
-      enter: 'top top',
-      leave: 'top-=400 bottom',
-      sync: .5,
-    }) 
-  });
-
+        enter: 'top top',
+        leave: 'top-=400 bottom',
+        sync: .5,
+      }) 
+    });
+    
     animate('.right', {
-      x: stagger(['-80rem','-20rem']),
-      y: stagger(['-20rem','-60rem']),
-      opacity:0,
-      rotate:'2turn',
+      x: stagger(['-20rem','20rem']),
+      y: stagger(['+20rem','-30rem']),
+      rotate: stagger(['.125turn','1turn']),
+      // opacity:0,
+      // rotate:'2turn',
       ease: 'linear',
       alternate:true,
       delay: stagger(100),
@@ -69,7 +91,17 @@ export default function ConsolidateSection() {
       sync: .5,
     })
   })
-
+    animate('.icon',{
+      opacity:0,
+      delay:stagger(1000),
+      ease:'linear',
+      autoplay: onScroll({
+        debug:false,
+        sync:true,
+        enter:'top bottom',
+        leave:'bottom bottm',
+      })
+    })
     animate('li', {
     opacity: 1,
     delay:stagger(100),
@@ -82,6 +114,46 @@ export default function ConsolidateSection() {
       sync: true,
     })
   });
+  animate('.bg', {
+  opacity: 1,
+  borderTopLeftRadius: '0%',
+  borderTopRightRadius: '0%',
+  borderRadius:'50%',
+  width:'100%',
+  height:'auto',
+  delay:100,
+  ease: 'linear',
+    alternate:true,
+  autoplay:onScroll({
+    debug:false,
+    enter: 'bottom-=150 top',
+    leave: 'bottom-=200 top+=200',
+    sync: true,
+  })})
+  animate('.etc', {
+  opacity:0,
+  delay:100,
+  ease: 'linear',
+    alternate:true,
+  autoplay:onScroll({
+    debug:false,
+    enter: 'top bottom+=400',
+    leave: 'top bottom+=450',
+    sync: true,
+  })})
+  animate('.pro', {
+  opacity:1,
+  delay:100,
+  ease: 'linear',
+    alternate:true,
+  autoplay:onScroll({
+    debug:false,
+    enter: 'top bottom+=300',
+    leave: 'top bottom+=400',
+    sync: true,
+  })})
+
+
 
     animate('span', {
       y: [
@@ -110,185 +182,211 @@ export default function ConsolidateSection() {
   }, []);
 
   return (
-    <>
-      <div className="scroll-container scroll-y w-full">
+    <div className={`${styles.container}`} style={{paddingTop:200}}>
+<div className={`${styles.div} ${styles.set} icon`}>
+          <div>
+            <Image
+              src={asana}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={gpt}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}
+            />
+          </div>
+          <div>
+          <Image
+            src={jira}
+            alt="Responsive Image"
+            className={`${styles.icon} img ${styles.right} right`}     
+          />
+          <Image
+            src={kissflow}
+            alt="Responsive Image"
+            className={`${styles.icon} img ${styles.right} right`}
+          />
+          <Image
+            src={monday}
+            alt="Responsive Image"
+            className={`${styles.icon} img left`}
+          />
+          <Image
+            src={slack}
+            alt="Responsive Image"
+            className={`${styles.icon} img left`}
+          />
+          </div>
+          <div>
+            <Image
+              src={teams}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}            
+            />
+            <Image
+              src={looker}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}  
+          />
+            <Image
+              src={miro}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}
+            />
+            <Image
+              src={notion}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={sales}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={tableau}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+          
+                
+            
+            </div>
+            </div>
+      <div className={`scroll-container scroll-y pt-20 w-full `}>
         <div className="scroll-content grid square-grid">
-          <div className="scroll-section padded">
-            <div className="large row">
-            </div>
-          </div>
-          <div className="scroll-section padded">
-            <div className="large row pin"> 
-            <div className='justify-items-center'>
-          <h2 className={styles.heading} style={{display:"flex"}} >
-            <span>T</span>
-            <span>H</span>
-            <span>E</span>
-            <span>&nbsp;</span>
-            <span>O</span>
-            <span>L</span>
-            <span>D</span>
-            <span>&nbsp;</span>
-            <span>W</span>
-            <span>A</span>
-            <span>Y</span>
-            <span>&nbsp;</span>
-            <span>O</span>
-            <span>F</span>
-          </h2>
-          <h2 className={styles.heading} style={{display:"flex"}} >
-            <span>W</span>
-            <span>O</span>
-            <span>R</span>
-            <span>K</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-          </h2>
-            </div>
-            <div className={`{styles.container}`}>
-                <div className={`${styles.div} items-center justify-items-center`}>
-                  <ol className={styles.list}>
-                    <li style={{padding:4,opacity:0}}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round"
-                className={styles.icons}>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-                      Time wasted switching between apps
-                    </li>
-                    <li style={{padding:4,opacity:0}}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round"
-                className={styles.icons}>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+          <div className="scroll-section padded"><div className="large row"></div></div>
+          
+            <div className={` large row scroll-section padded`}> 
+              <div>
+                <div className={`justify-items-center`}>
+                  {/* cons section */}
 
-                      Scattered conversations and decisions
-                    </li>
-                    <li style={{padding:4,opacity:0}}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round"
-                className={styles.icons}>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-                      Can’t find important info or files
-                    </li>
-                    <li style={{padding:4,opacity:0}}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round"
-                className={styles.icons}>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-                      Too many notifications in too many places
-                    </li>
-                    <li style={{padding:4,opacity:0}}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round"
-                className={styles.icons}>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-                      Work feels chaotic and unfocused
-                    </li>
-                    <li style={{padding:4,opacity:0}}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" strokeWidth="2"
-                      strokeLinecap="round" strokeLinejoin="round"
-                      className={styles.icons}>
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                      Paying for many tools drains your budget
-                    </li>
-                  </ol>
+                  <div className="panel1">
+                    <div className='justify-items-center'> {/* con heading */}
+            <h2 className={styles.heading} style={{display:"flex"}} >
+              THE OLD WAY OF
+            </h2>
+            <h2 className={styles.heading} style={{display:"flex"}} >
+              WORKING
+            </h2>
+                    </div>
+                    <div className=' justify-items-center'>{/* cons list */}
+                    <ol className={`${styles.list}`}> 
+                      <li style={{padding:4,opacity:0}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  className={styles.icons}>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+                        Time wasted switching between apps
+                      </li>
+                      <li style={{padding:4,opacity:0}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  className={styles.icons}>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+
+                        Scattered conversations and decisions
+                      </li>
+                      <li style={{padding:4,opacity:0}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  className={styles.icons}>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+                        Can’t find important info or files
+                      </li>
+                      <li style={{padding:4,opacity:0}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  className={styles.icons}>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+                        Too many notifications in too many places
+                      </li>
+                      <li style={{padding:4,opacity:0}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  className={styles.icons}>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+                        Work feels chaotic and unfocused
+                      </li>
+                      <li style={{padding:4,opacity:0}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" strokeWidth="2"
+                        strokeLinecap="round" strokeLinejoin="round"
+                        className={styles.icons}>
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                        Paying for many tools drains your budget
+                      </li>
+                    </ol>
+                    </div>
+                  </div>
+                  <div>
+                  <div className={`panel2 justify-items-center`}  style={{width:'100%'}}> 
+                        {/* <div className={`{  ${styles.bg}}`} style={{width:'100%'}}> */}
+                          <Image className={`${styles.bg} 4{styles.div} bg justify-items-center`}
+                          //  style={{width:'100%'}}
+                          src={bg}
+                          alt='bg'/> 
+                          <div className={`${styles.div} etc ${styles.etc}`}>
+                            Escape the Clutter
+                          </div>
+                          <div className={`${styles.div} pro ${styles.pro}`}>
+                            <div className='justify-items-center'> {/* con heading */}
+            <h2 className={styles.heading} style={{display:"flex"}} >
+              <span>T</span>
+              <span>H</span>
+              <span>E</span>
+              <span>&nbsp;</span>
+              <span>P</span>
+              <span>R</span>
+              <span>O</span>
+              <span>M</span>
+              <span>P</span>
+              <span>T</span>
+              <span>L</span>
+              <span>Y</span>
+              <span>&nbsp;</span>
+              <span>W</span>
+              <span>A</span>
+              <span>Y</span>
+            </h2>
+                    </div>
+                            <p>
+                              One place for ideas, docs, and projects
+One place for conversations and decisions
+One place for important info and files
+One place for notifications
+Work feels calm and focused
+Pay for one tool and free up budget
+                            </p>
+                          </div>
+                        {/* </div> */}
+                          </div>
+                  </div>
                 </div>
-                <div className={`${styles.div} ${styles.set}`}>
-                <div>
-                  <Image
-                    src={asana}
-                    alt="Responsive Image"
-                    className={`${styles.icon} left`}
-                  />
-                  <Image
-                    src={gpt}
-                    alt="Responsive Image"
-                    className={`${styles.icon} ${styles.right} right`}
-                  />
-                </div>
-                <div>
-                <Image
-                  src={jira}
-                  alt="Responsive Image"
-                  className={`${styles.icon} ${styles.right} right`}     
-                />
-                <Image
-                  src={kissflow}
-                  alt="Responsive Image"
-                  className={`${styles.icon} ${styles.right} right`}
-                />
-                <Image
-                  src={monday}
-                  alt="Responsive Image"
-                  className={`${styles.icon} left`}
-              />
-                <Image
-                  src={slack}
-                  alt="Responsive Image"
-                  className={`${styles.icon} left`}
-              />
-                </div>
-                <div>
-                  <Image
-                    src={teams}
-                    alt="Responsive Image"
-                    className={`${styles.icon} ${styles.right} right`}            
-                  />
-                  <Image
-                    src={looker}
-                    alt="Responsive Image"
-                    className={`${styles.icon} ${styles.right} right`}  
-                />
-                  <Image
-                    src={miro}
-                    alt="Responsive Image"
-                    className={`${styles.icon} ${styles.right} right`}
-                  />
-                  <Image
-                    src={notion}
-                    alt="Responsive Image"
-                    className={`${styles.icon} left`}
-                  />
-                  <Image
-                    src={sales}
-                    alt="Responsive Image"
-                    className={`${styles.icon} left`}
-                  />
-                  <Image
-                    src={tableau}
-                    alt="Responsive Image"
-                    className={`${styles.icon} left`}
-                  />
-                  {/* <img src="" className="lefticon" alt="logo" style={{display:'inline'}}  />
-                  <img src="" className="lefticon" alt="logo" style={{display:'inline'}}  />
-                  <img src="" className="lefticon" alt="logo" style={{display:'inline'}}  /> */}
                 </div>
                 </div>
-            </div>
-            </div>
+                 
           </div>
-          <div className="scroll-section">
-          </div>
+          <div className="scroll-section"></div>
         </div>
-      </div>
-    </>
+        </div>
   )}
