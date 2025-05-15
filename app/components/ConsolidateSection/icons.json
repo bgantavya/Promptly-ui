@@ -1,10 +1,71 @@
-[
-    {
-        "name":"chatgpt",
-        "d":"chatgpt"
-    },
-    {
-        "hello":"buf",
-        "ji":"buf"
-    }
-]
+<div className={`${styles.div} ${styles.set} icon`}>
+          <div>
+            <Image
+              src={asana}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={gpt}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}
+            />
+          </div>
+          <div>
+          <Image
+            src={jira}
+            alt="Responsive Image"
+            className={`${styles.icon} img ${styles.right} right`}     
+          />
+          <Image
+            src={kissflow}
+            alt="Responsive Image"
+            className={`${styles.icon} img ${styles.right} right`}
+          />
+          <Image
+            src={monday}
+            alt="Responsive Image"
+            className={`${styles.icon} img left`}
+          />
+          <Image
+            src={slack}
+            alt="Responsive Image"
+            className={`${styles.icon} img left`}
+          />
+          </div>
+          <div>
+            <Image
+              src={teams}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}            
+            />
+            <Image
+              src={looker}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}  
+          />
+            <Image
+              src={miro}
+              alt="Responsive Image"
+              className={`${styles.icon} img ${styles.right} right`}
+            />
+            <Image
+              src={notion}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={sales}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+            <Image
+              src={tableau}
+              alt="Responsive Image"
+              className={`${styles.icon} img left`}
+            />
+          
+                
+            
+            </div>
+            </div>

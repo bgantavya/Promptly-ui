@@ -10,9 +10,6 @@ export default function TestSection(){
         <>
         <div style={test}></div>
     <div style={test}></div>
-    <div style={test}></div>
-    <div style={test}></div>
-      <div style={test}></div>
         </>
     )
 }
